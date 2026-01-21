@@ -30,7 +30,7 @@ O projeto utiliza uma arquitetura de microserviços independentes, cada um com s
 ### Stack Principal
 - **Java**: 21
 - **Spring Boot**: 3.4.3
-- **Spring Cloud**: 2024.0.0
+- **Spring Cloud**: 2024.0.0 (PromoWiseMS)
 - **Maven**: Gerenciamento de dependências e build
 
 ### Frameworks e Bibliotecas
@@ -157,16 +157,41 @@ As configurações estão em `orderworkerms/orderworkerms/src/main/resources/app
     <dependency>
         <groupId>com.mysql</groupId>
         <artifactId>mysql-connector-j</artifactId>
+        <scope>runtime</scope>
     </dependency>
     
     <!-- Testing -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-testcontainers</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>mysql</artifactId>
+        <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.wiremock.integrations.testcontainers</groupId>
         <artifactId>wiremock-testcontainers-module</artifactId>
+        <version>1.0-alpha-13</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.wiremock</groupId>
+        <artifactId>wiremock</artifactId>
+        <version>3.12.1</version>
+        <scope>test</scope>
     </dependency>
 </dependencies>
 ```
@@ -188,6 +213,7 @@ As configurações estão em `orderworkerms/orderworkerms/src/main/resources/app
     <dependency>
         <groupId>org.postgresql</groupId>
         <artifactId>postgresql</artifactId>
+        <scope>runtime</scope>
     </dependency>
     
     <!-- AWS -->
@@ -199,11 +225,29 @@ As configurações estão em `orderworkerms/orderworkerms/src/main/resources/app
     <!-- Testing -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-testcontainers</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>postgresql</artifactId>
+        <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.testcontainers</groupId>
         <artifactId>localstack</artifactId>
+        <version>1.20.0</version>
+        <scope>test</scope>
     </dependency>
 </dependencies>
 ```
